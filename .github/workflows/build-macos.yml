@@ -32,7 +32,7 @@ jobs:
           iconutil -c icns icon.iconset
 
       - name: Build with PyInstaller
-        run: pyinstaller --onedir --windowed --icon=icon.icns PDF_Resize.py
+        run: pyinstaller --onedir --windowed --name=PDF_Resize --icon=icon.icns PDF_Resize.py
 
       - name: Archive build
         run: |
