@@ -34,14 +34,18 @@ jobs:
       - name: Build with PyInstaller
         run: pyinstaller --onedir --windowed --name=PDF_Resize --icon=icon.icns PDF_Resize.py
 
-      - name: Archive build
+      #- name: Archive build
+        #run: |
+        #  mkdir -p dist-macos
+        #  mv dist/PDF_Resize dist-macos/
+        #  tar -czvf dist-macos.tar.gz dist-macos
+      - name: Package .app into a .zip file
         run: |
-          mkdir -p dist-macos
-          mv dist/PDF_Resize dist-macos/
-          tar -czvf dist-macos.tar.gz dist-macos
+          cd dist
+          zip -r ../PDF_Resize.app.zip PDF_Resize.app
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4.4.3
         with:
           name: macOS-build
-          path: dist-macos.tar.gz
+          path: dist-macos.app.zip
