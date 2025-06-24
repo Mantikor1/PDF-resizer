@@ -11,6 +11,10 @@ APP = ["PDF_Resize.py"]
 DATA_FILES = []
 OPTIONS = {
     "argv_emulation": True,
+    "dylib_excludes": [
+        "/Library/Frameworks/Python.framework/Versions/3.13/Frameworks/Tcl.framework",
+        "/Library/Frameworks/Python.framework/Versions/3.13/Frameworks/Tk.framework",
+    ],
 }
 
 setup(
