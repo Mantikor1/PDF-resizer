@@ -26,10 +26,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pyinstaller
-          pip install pillow
 
       - name: Build with PyInstaller
-        run: pyinstaller --onedir --windowed --icon=file-pdf-regular.svg PDF_Resize.py
+        run: pyinstaller --onedir --windowed --icon=file-pdf-regular.ico PDF_Resize.py
 
       - name: Archive build
         run: |
