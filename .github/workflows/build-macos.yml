@@ -26,14 +26,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pyinstaller
-          brew install imagemagick
 
       - name: Convert .svg to .icns
         run: |
-          convert file-pdf-regular.svg -resize 256x256 file-pdf-regular.ico
+          iconutil -c icns icon.iconset
 
       - name: Build with PyInstaller
-        run: pyinstaller --onedir --windowed --icon=file-pdf-regular.ico PDF_Resize.py
+        run: pyinstaller --onedir --windowed --icon=icon.icns PDF_Resize.py
 
       - name: Archive build
         run: |
