@@ -34,6 +34,7 @@ jobs:
       - name: Build with PyInstaller
         run: |
           python setup.py py2app
+          codesign --force --deep --sign - dist/PDF_Resize.app
 
       #- name: Archive build
         #run: |
