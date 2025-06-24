@@ -41,8 +41,7 @@ jobs:
         #  tar -czvf dist-macos.tar.gz dist-macos
       - name: Package .app into a .zip file
         run: |
-          cd dist
-          zip -r ../PDF_Resize.app.zip PDF_Resize.app
+          zip -r ../PDF_Resize.app.zip dist/PDF_Resize.app
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4.4.3
