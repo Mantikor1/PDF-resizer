@@ -6,6 +6,7 @@ OPTIONS = {
     "argv_emulation": True,
     "iconfile": "icon.icns",  # optional
     "packages": [],
+    "codesign_identity": None,
 }
 
 setup(
