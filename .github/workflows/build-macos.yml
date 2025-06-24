@@ -31,17 +31,10 @@ jobs:
         run: |
           iconutil -c icns icon.iconset
 
-      - name: Build with PyInstaller
+      - name: Build with Py2App 
         run: |
-          export PY2APP_CODESIGN=0
           python setup.py py2app
-          codesign --force --deep --sign - dist/PDF_Resize.app
 
-      #- name: Archive build
-        #run: |
-        #  mkdir -p dist-macos
-        #  mv dist/PDF_Resize dist-macos/
-        #  tar -czvf dist-macos.tar.gz dist-macos
       - name: Package .app into a .zip file
         run: |
           cd dist
